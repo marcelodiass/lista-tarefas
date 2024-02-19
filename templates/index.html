@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for tarefa in lista_tarefas %}
+            <li>{{ tarefa['nome'] }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="nome_tarefa">
+        <button type="submit">Adicionar Tarefa</button>
+    </form>
+</body>
+</html>
